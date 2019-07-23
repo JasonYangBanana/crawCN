@@ -354,7 +354,7 @@ function handleNextQuestion(e, a, t, i) {
     n["input_val_" + a] = s;
   else if (2 == e)
     n = {
-      'item[]': selected.items,
+      item: selected.items,
       action: "next"
     },
     selected.items.length <= 0 ? o = {
