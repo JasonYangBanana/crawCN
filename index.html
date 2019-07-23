@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .options_row.on {
+      background-color: tomato;
+      opacity: .5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top"
+    style="height: 135px;overflow: hidden;background: url(/media/file_org/2018/4/2/1923135e4f4faf33bd4e8d7ff7218ef6.png) no-repeat center; background-size: cover">
+    <div class="topMain" style="    height: auto;width: 1195px;margin: 0 auto;overflow: hidden;">
+      <div class="logo"
+        style="width: 388px;height: 108px;background: url(/media/file_org/2018/6/27/e00e0a70b82cf7da1ff1dfb6552078fb.png) no-repeat;float: left;margin-top: 27px;">
+      </div>
+      <div class="topRig" style="height: auto;width: auto;float: right;margin-top: 22px;overflow: hidden;">
+        <a href="http://ai.12348.gov.cn/free_reading/" class="accessible" target="_self"
+          style="display: inline-block;color: #c0deff;font-size: 16px;background: url(/media/file_org/2018/4/2/238b07a11ae42e4205b3a935c82fddfe.png) no-repeat left center;padding-left: 20px;">无障碍浏览</a>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="menu">
+    <div class="mainer">
+      <ul class="menuLis">
+        <li>
+          <a href="http://www.12348.gov.cn/">
+            <div class="menuTxt">首页</div>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.12348.gov.cn/#/publicies/lawdept/lawdept">
+            <div class="menuTxt">请律师</div>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.12348.gov.cn/#/publicies/notarization/notarization">
+            <div class="menuTxt">办公证</div>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.12348.gov.cn/#/publicies/legalAid/legalAid">
+            <div class="menuTxt">求法援</div>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.12348.gov.cn/#/publicies/rmtjdept/rmtjdept">
+            <div class="menuTxt">找调解</div>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.12348.gov.cn/#/publicies/identification/identification">
+            <div class="menuTxt">寻鉴定</div>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.12348.gov.cn/fzxc/">
+            <div class="menuTxt">法治宣传</div>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.12348.gov.cn/#/publicies/LegalPublicity/lawservice">
+            <div class="menuTxt">执法服务</div>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.12348.gov.cn/#/publicies/sfks/sfks">
+            <div class="menuTxt nobg">法考服务</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- home start -->
+  <div id="home">
+    <div class="main-advice">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="hts">
+              <h1>智能法律咨询</h1>
+              <p>根据问卷提示填写相关信息，在线为您出具专业法律咨询意见书，供您参考。
+                <br>问题描述越详细，回答越全面越精确。</p>
+              <div>已出具
+                <strong id="staticCount">916,609</strong> 份专业法律意见书</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c1" data-index="0">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/01.png" alt="">
+              </div>
+              <strong>婚姻问题</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c2" data-index="1">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/02.png" alt="">
+              </div>
+              <strong>劳动纠纷</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c3" data-index="2">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/03.png" alt="">
+              </div>
+              <strong>工伤赔偿</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c4" data-index="3">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/04.png" alt="">
+              </div>
+              <strong>交通事故</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c5" data-index="4">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/05.png" alt="">
+              </div>
+              <strong>借贷纠纷</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c6" data-index="5">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/06.png" alt="">
+              </div>
+              <strong>继承问题</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c7" data-index="6">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/07.png" alt="">
+              </div>
+              <strong>买房纠纷</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c8" data-index="7">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/08.png" alt="">
+              </div>
+              <strong>物业纠纷</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c9" data-index="8">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/09.png" alt="">
+              </div>
+              <strong>产品质量</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c10" data-index="9">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/10.png" alt="">
+              </div>
+              <strong>电商纠纷</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c11" data-index="10">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/11.png" alt="">
+              </div>
+              <div class="new"></div>
+              <strong>校园侵权</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c12" data-index="11">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/12.png" alt="">
+              </div>
+              <div class="new"></div>
+              <strong>雇佣侵权</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c13" data-index="12">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/13.png" alt="">
+              </div>
+              <div class="new"></div>
+              <strong>医患纠纷</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c14" data-index="13">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/14.png" alt="">
+              </div>
+              <div class="new"></div>
+              <strong>食品安全</strong>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div onclick="getSortChoose(this)" class="item c15" data-index="14">
+              <div class="imgs">
+                <img src="/static/web/theme/gov_12348_new/img/ui/icon/15.png" alt="">
+              </div>
+              <div class="new"></div>
+              <strong>收养问题</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade sort-list--modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title" id="gridSystemModalLabel">请选择法律问题进行咨询</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- home end -->
+
+  <!-- question start-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 test_wrap">
+        <div class="testWrap on">
+          <!-- inject response -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- question end -->
+
+  <script src="./jquery.min.js"></script>
+  <script src="./bootstrap.min.js"></script>
+  <script src="./countUp.min.js"></script>
+  <script src="./velocity.min.js"></script>
+  <script src="./waitMe.js"></script>
+  <script src="./placeholder.js"></script>
+  <script src="./c.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script>
+    const baseURL = 'https://e99ffaa1.ngrok.io'
+    let JasonURL = null
+    let JasonCookie = null;
+    //home
+    var advisory = [{
+        title: '婚姻问题',
+        icon: '01.png',
+        color: '#03a9f4',
+        intro: '离婚协议书怎么写？能不能离婚？小孩会判给谁？离婚财产该怎么分？起诉状怎么写？',
+        sub: [{
+            link: '/g/divorce/',
+            title: '整体离婚咨询'
+          },
+          {
+            link: '/g/where_to_divorce/',
+            title: '去哪里离婚'
+          },
+          {
+            link: '/g/divorce_rate/',
+            title: '能不能离婚'
+          },
+          {
+            link: '/g/custody/',
+            title: '小孩问题'
+          },
+          {
+            link: '/g/our_children/',
+            title: '离婚后小孩的问题'
+          },
+          {
+            link: '/g/properties_division/',
+            title: '财产问题'
+          },
+          {
+            link: '/g/live_together_dispute/',
+            title: '同居问题'
+          },
+          {
+            link: '/g/divorce_indictment/',
+            title: '起诉状'
+          },
+          {
+            link: '/g/divorce_agreement/',
+            title: '离婚协议书'
+          },
+          {
+            link: '/g/properties_agreement/',
+            title: '财产协议'
+          },
+          {
+            link: '/g/premarital_counseling/',
+            title: '婚前问题咨询'
+          },
+          {
+            link: '/g/after_the_divorce_disputes/',
+            title: '离婚后问题'
+          }
+        ],
+      }, {
+        title: '劳动纠纷',
+        icon: '02.png',
+        color: '#ffc107',
+        intro: '劳动纠纷怎么解决？不签劳动合同、加班工资怎么办？试用期问题？',
+        sub: [{
+            link: '/g/labor/',
+            title: '劳动纠纷'
+          },
+          {
+            link: '/g/labor_changjian/',
+            title: '劳动纠纷常见问题'
+          },
+          {
+            link: '/g/double_pay/',
+            title: '不签劳动合同的双倍工资'
+          },
+          {
+            link: '/g/overtime_pay/',
+            title: '加班工资'
+          },
+          {
+            link: '/g/salary/',
+            title: '工资问题'
+          },
+          {
+            link: '/g/shiyongqi/',
+            title: '试用期问题'
+          },
+          {
+            link: '/g/severance_pay/',
+            title: '离职时的经济补偿金'
+          }
+        ],
+      }, {
+        title: '工伤赔偿',
+        icon: '03.png',
+        color: '#607d8b',
+        intro: '工伤赔偿计算，工伤认定标准，工伤鉴定',
+        sub: [{
+            link: '/g/injury_benefit/',
+            title: '工伤赔偿(精准)'
+          },
+          {
+            link: '/g/jiuye_yiliao/',
+            title: '工伤赔偿(快速)'
+          },
+          {
+            link: '/g/identify_injury/',
+            title: '工伤认定'
+          },
+          {
+            link: '/g/work_ca_eva/',
+            title: '工伤鉴定'
+          },
+          {
+            link: '/g/rending_shenqing/',
+            title: '工伤认定申请表'
+          }
+        ],
+      }, {
+        title: '交通事故',
+        icon: '04.png',
+        color: '#8bc34a',
+        intro: '交通事故赔偿计算？伤残鉴定是几级？赔偿流程怎么走？起诉状怎么写',
+        sub: [{
+            link: '/g/traffic_accident_compensation/',
+            title: '交通事故赔偿计算'
+          },
+          {
+            link: '/g/injury/',
+            title: '交通伤残鉴定'
+          },
+          {
+            link: '/g/compensation_procedure/',
+            title: '交通事故赔偿流程'
+          },
+          {
+            link: '/g/indictment/',
+            title: '交通事故起诉状'
+          }
+        ],
+      },
+      {
+        title: '借贷纠纷',
+        icon: '05.png',
+        color: '#00bcd4',
+        intro: '借贷纠纷、法院起诉状怎么写？保全申请书怎么写？',
+        sub: [{
+            link: '/g/debit_credit/',
+            title: '借贷纠纷'
+          },
+          {
+            link: '/g/prosecution_form/',
+            title: '法院起诉状'
+          },
+          {
+            link: '/g/application_preservation/',
+            title: '保全申请书'
+          }
+        ]
+      },
+      {
+        title: '继承问题',
+        icon: '06.png',
+        color: '#ff9800',
+        intro: '能不能继承遗产？哪些人能继承遗产？遗产怎么分割？',
+        link: '/g/inherit'
+      },
+      {
+        title: '买房纠纷',
+        icon: '07.png',
+        color: '#00bcd4',
+        intro: '',
+        sub: [{
+            link: '/g/subscription/',
+            title: '认购书纠纷'
+          },
+          {
+            link: '/g/late_certificate/',
+            title: '逾期办证'
+          },
+          {
+            link: '/g/area_error/',
+            title: '面积误差'
+          },
+          {
+            link: '/g/two_buyer/',
+            title: '一房二卖'
+          },
+          {
+            link: '/g/late_deliver/',
+            title: '逾期交房'
+          }
+        ]
+      },
+      {
+        title: '物业纠纷',
+        icon: '08.png',
+        color: '#00bcd4',
+        intro: '',
+        sub: [{
+            link: '/g/property_dispute/',
+            title: '物业费纠纷'
+          },
+          {
+            link: '/g/service_quality_dispute/',
+            title: '物业服务质量纠纷'
+          },
+          {
+            link: '/g/proprietor_committee/',
+            title: '业主委员会相关问题'
+          },
+          {
+            link: '/g/parking_space/',
+            title: '车位或其他小区公共区域纠纷'
+          },
+          {
+            link: '/g/owners_rights/',
+            title: '业主权益受到其他业主侵害纠纷'
+          },
+          {
+            link: '/g/property_common_problems/',
+            title: '其他常见问题'
+          }
+        ]
+      },
+      {
+        title: '产品质量',
+        icon: '09.png',
+        color: '#ff9800',
+        intro: '',
+        link: '/g/zhiliangzeren'
+      },
+      {
+        title: '电商纠纷',
+        icon: '10.png',
+        color: '#ff9800',
+        intro: '',
+        link: '/g/electronics_electric_vehicles'
+      },
+      {
+        title: '校园侵权',
+        icon: '11.png',
+        color: '#03a9f4',
+        intro: '',
+        link: '/g/campus_tort'
+      },
+      {
+        title: '雇佣侵权',
+        icon: '11.png',
+        color: '#ffc107',
+        intro: '',
+        link: '/g/laowuqinquan'
+      },
+      {
+        title: '医患纠纷',
+        icon: '11.png',
+        color: '#607d8b',
+        intro: '',
+        link: '/g/yihuanjiufen'
+      },
+      {
+        title: '食品安全',
+        icon: '11.png',
+        color: '#8bc34a',
+        intro: '',
+        link: '/g/food_safety'
+      },
+      {
+        title: '收养问题',
+        icon: '11.png',
+        color: '#00bcd4',
+        intro: '',
+        link: '/g/adoption_issues'
+      }
+
+    ]
+
+    async function callFirst(url) {
+      JasonURL = url
+      // console.log('url:', url);
+      const res = await axios.post(`${baseURL}/api/first`, {
+        url
+      })
+      // console.log('res:', res);
+      JasonCookie = res.data.cookie[0].Value
+      const htmlString = res.data.data
+      renderPage(htmlString)
+      const home = document.querySelector('#home')
+      home.remove()
+    }
+
+    function getSortList(item) {
+      return item.sub.map(function (v) {
+        return `<div onclick="callFirst('${v.link}')" class="col-md-4">${v.title}</div>`
+      })
+    }
+
+    function getSortChoose(element) {
+      const index = element.dataset.index;
+      var t = advisory[index]
+      if (t.link) {
+        callFirst(t.link)
+        return
+      }
+      var list = getSortList(t)
+      $('.sort-list--modal .modal-body .row').html(list.join(''))
+      $('.sort-list--modal').modal('show')
+    }
+
+    $(function () {
+      $('body')
+        .on('click', '.main-advice a', getSortChoose)
+        .on('click', '.gotop', function (e) {
+          $('html,body').animate({
+            scrollTop: 0
+          }, 'normal')
+        })
+      // '/get/statistics_12348/'
+      $.get('/get/advice/total/?shop_id=102', function (res) {
+        var options = {
+          useEasing: true,
+          useGrouping: true,
+          separator: ',',
+          decimal: '.',
+        };
+        var endCount = res.result.document + res.result.report
+        var demo = new CountUp('staticCount', 0, endCount, 0, 2.5, options);
+        if (!demo.error) {
+          demo.start();
+        } else {
+          console.error(demo.error);
+        }
+      })
+    });
+  </script>
+</body>
+
+</html>
