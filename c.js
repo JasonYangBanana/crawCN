@@ -392,6 +392,7 @@ function handleNextQuestion(e, a, t, i) {
         }
       }).then(function (response) {
         e = response.data.data
+        console.log("e:", e);
         hide_loading();
         var t = $("#id_question").data("iw");
         if (0 == e.state) {
@@ -407,7 +408,8 @@ function handleNextQuestion(e, a, t, i) {
           $("body").on("hidden.bs.alert-modal", function (e) {
             $("#id_input_val_" + a).focus()
           })
-        } else
+        } else {
+          if (e.url) return window.location.href = `https://ai.12348.gov.cn${e.url}`
           e.cd && 0 == e.iw && e.url ? window.location = e.url : (selected = {
               items: []
             },
@@ -416,6 +418,7 @@ function handleNextQuestion(e, a, t, i) {
             $("body").removeClass("modal-open"),
             $(".modal-backdrop").remove(),
             renderPage(e))
+        }
       })),
     !1
 }
