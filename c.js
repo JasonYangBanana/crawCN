@@ -304,6 +304,7 @@ function get_input_val(e) {
 }
 
 function handleNextQuestion(e, a, t, i) {
+  console.log("e:", e);
   var n = {},
     s = "",
     o = (parseInt($("#id_item_" + a).data("it")),
@@ -320,18 +321,19 @@ function handleNextQuestion(e, a, t, i) {
   else if (5 == e) {
     s = [],
       n = {
-        action: "next"
+        action: "next",
+        other: {}
       },
       1 == $("#id_item_" + a).data("is_unique") ? (null != t && (n["input_val_" + a] = t),
         $(".i_item").each(function () {
           code2 = $(this).attr("id").replace("id_item_", ""),
-            n["input_val_" + code2] = get_input_val(code2)
+            n['other']["input_val_" + code2] = get_input_val(code2)
         }),
         s.push(a)) : $(".i_item").each(function () {
         if (o)
           return !1;
         a = $(this).attr("id").replace("id_item_", ""),
-          n["input_val_" + a] = get_input_val(a),
+          n['other']["input_val_" + a] = get_input_val(a),
           s.push(a);
         var e = $("#id_input_val_" + a);
         !$("#id_input_val_" + a).attr("required") || e && "" != e.val() && null != e.val() || (o = {
@@ -340,18 +342,21 @@ function handleNextQuestion(e, a, t, i) {
         })
       }),
       n.item = s
+    console.log('n:', n);
   } else if (3 == e)
     a = $("#id_question").data("qid"),
     n = {
       item: a,
-      action: "next"
+      action: "next",
+      other: {}
     },
     s = get_input_val(a),
     $("#id_input_val_" + a).attr("required") && !s && (o = {
       code: a,
       errors: $("#id_question").html() + " 是必填"
     }),
-    n["input_val_" + a] = s;
+    n['other']["input_val_" + a] = s,
+    console.log("n:", n);
   else if (2 == e)
     n = {
       item: selected.items,
@@ -433,7 +438,7 @@ function skipContact(e) {
 
 function renderPage(e) {
   const data = e.c ? e.c : e
-  console.log(data);
+  // console.log(data);
   if (!e.iw && localStorage.skip_contact)
     return skipContact(),
       !1;
