@@ -219,20 +219,28 @@ function setWidgetSelect() {
     s = $(this).parents(".widget_items"),
     o = s.find("input").attr("id").replace("id_input_val_", ""),
     e = "/g/ct/list/" + parseInt($("#id_item_" + o).data("it")) + "/";
+  console.log("e:", e);
+  console.log("o:", o);
+  console.log("t:", t);
+  console.log("n:", n);
   $("#id_tmp_" + o).val(t);
   var r = $("#id_question").data("iw");
   n ? (loading("数据加载中..."),
-    $.getJSON(e, {
-      parent_id: t
-    }, function (e) {
+    axios.post(`${baseURL}/api/location`, {
+      url: e,
+      data: {
+        parent_id: t
+      }
+    }).then(function (e) {
+      console.log(e.data.c);
       hide_loading(),
         "chidlren_count" != n ? (a.siblings("a").removeClass("current"),
           a.addClass("current"),
           s.find(".item:first").nextAll().remove()) : (a.siblings("a").removeClass("current"),
           a.addClass("current"),
           a.parent(".item").nextAll().remove()),
-        $.isEmptyObject(e) && $("#id_input_val_" + o).val(t),
-        !$.isEmptyObject(e) || 1 != r && 4 != r && 3 != r ? widgetUpdates(e, s, r, o, t, i) : ($("#id_item_" + o).addClass("on"),
+        $.isEmptyObject(e.data) && $("#id_input_val_" + o).val(t),
+        !$.isEmptyObject(e.data) || 1 != r && 4 != r && 3 != r ? widgetUpdates(e.data, s, r, o, t, i) : ($("#id_item_" + o).addClass("on"),
           handleNextQuestion(r, o, t))
     })) : ($(".w_item").removeClass("on"),
     $(this).parents(".w_item").addClass("on"),
@@ -315,16 +323,17 @@ function handleNextQuestion(e, a, t, i) {
   else if (1 == e || 4 == e)
     n = {
       item: a,
-      action: "next"
+      action: "next",
+      other: {}
     },
-    null != t && (n["input_val_" + a] = t);
+    null != t && (n['other']["input_val_" + a] = t);
   else if (5 == e) {
     s = [],
       n = {
         action: "next",
         other: {}
       },
-      1 == $("#id_item_" + a).data("is_unique") ? (null != t && (n["input_val_" + a] = t),
+      1 == $("#id_item_" + a).data("is_unique") ? (null != t && (n['other']["input_val_" + a] = t),
         $(".i_item").each(function () {
           code2 = $(this).attr("id").replace("id_item_", ""),
             n['other']["input_val_" + code2] = get_input_val(code2)
@@ -360,13 +369,14 @@ function handleNextQuestion(e, a, t, i) {
   else if (2 == e)
     n = {
       item: selected.items,
-      action: "next"
+      action: "next",
+      other: {}
     },
     selected.items.length <= 0 ? o = {
       errors: "此项为关键信息，需要您填写才可进行下一步咨询"
     } : $.each(selected.items, function (e, t) {
       var i = $("#id_input_val_" + t);
-      i && null != (i = i.val()) && (n["input_val_" + t] = i)
+      i && null != (i = i.val()) && (n['other']["input_val_" + t] = i)
     });
   else {
     s = [],
